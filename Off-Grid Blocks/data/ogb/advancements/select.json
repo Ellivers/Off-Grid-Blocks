@@ -1,0 +1,31 @@
+{
+    "criteria": {
+        "hit": {
+            "trigger": "minecraft:player_hurt_entity",
+            "conditions": {
+                "entity": {
+                    "type": "#ogb:hitboxes",
+                    "nbt": "{Tags:[\"ogb.block_hitbox\",\"off_grid_blocks\"]}"
+                },
+                "damage": {
+                    "type": {
+                        "source_entity": {
+                            "equipment": {
+                                "mainhand": {
+                                    "item": "minecraft:carrot_on_a_stick",
+                                    "nbt": "{OGB_Tool:1b}"
+                                }
+                            },
+                            "player": {
+                                "gamemode": "creative"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "rewards": {
+        "function": "ogb:select_block/select1"
+    }
+}

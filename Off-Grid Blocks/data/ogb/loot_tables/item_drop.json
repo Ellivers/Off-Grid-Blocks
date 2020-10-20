@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:command",
+    "pools": [
+        {
+            "rolls": 1,
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "name": "minecraft:dirt",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_nbt",
+                            "tag": "{OGB_BlockDrop:1b}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
