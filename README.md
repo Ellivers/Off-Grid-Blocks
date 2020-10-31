@@ -8,3 +8,5 @@ This project is very early in development. Lots of features are going to be adde
 To give yourself the off-grid blocks wand, type `/loot give @s loot ogb:tool`
 To make a block into an off-grid block, right-click it with the wand.
 To select or deselect a block, hit the block with the wand.
+
+If you have any questions, feel free to ask in my discord: https://discord.gg/jn8d4zb

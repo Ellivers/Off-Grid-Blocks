@@ -7,7 +7,7 @@ execute if entity @s[tag=ogb.block_visual.fb,tag=ogb.block_collision.shulker] po
 execute if entity @s[tag=ogb.block_visual.fb,tag=ogb.block_collision.none] positioned ~170 ~ ~ run function ogb:create_block/summon/fb_none
 execute if entity @s[tag=ogb.block_visual.fb] run summon minecraft:area_effect_cloud ~ ~ ~ {Age: -2147483648, Duration: -1, WaitTime: -2147483648, Tags: ["ogb.block_placement_marker","off_grid_blocks"]}
 execute positioned ~170 ~ ~ as @e[type=#ogb:hitboxes,tag=ogb.block_hitbox,tag=off_grid_blocks,sort=nearest,limit=1] positioned ~-150 ~ ~ run scoreboard players operation @e[type=minecraft:area_effect_cloud,tag=ogb.block_placement_marker,tag=off_grid_blocks,sort=nearest,limit=1] ogb.group_id = @s ogb.group_id
-execute if entity @s[tag=ogb.copy_block] positioned ~170 ~ ~ run tag @e[type=#ogb:blocks,tag=ogb.block,tag=off_grid_blocks,sort=nearest,limit=1] add ogb.get_from_closest
+execute if entity @s[tag=ogb.copy_block] positioned ~170 ~ ~ run tag @e[type=#ogb:blocks,tag=ogb.block,tag=off_grid_blocks,sort=nearest,limit=1] add ogb.copy
 
 execute positioned ~170 ~ ~ as @e[type=#ogb:hitboxes,tag=ogb.block_hitbox,tag=off_grid_blocks,sort=nearest,limit=1] at @s run function ogb:select_block/select2
 execute if entity @s[type=minecraft:player] run scoreboard players operation @s ogb.latest_block = #SID_temp off_grid_blocks
