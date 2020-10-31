@@ -1,5 +1,4 @@
 # Checks if the arrow has the inBlockState nbt tag, otherwise it gives an error
-# Should also give an error if the arrow doesn't exist
 execute as @e[type=minecraft:arrow,tag=ogb.block_detector,tag=off_grid_blocks] if data entity @s inBlockState at @s run function ogb:create_block/get_block
 execute as @e[type=minecraft:arrow,tag=ogb.block_detector,tag=off_grid_blocks] unless data entity @s inBlockState as @e[type=minecraft:area_effect_cloud,tag=ogb.block_detection_marker,tag=off_grid_blocks,sort=nearest,limit=1] at @s run function ogb:create_block/get_block2
 

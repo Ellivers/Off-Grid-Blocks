@@ -1,0 +1,2 @@
+scoreboard players operation #GID_temp off_grid_blocks = @s off_grid_blocks
+execute if entity @s[tag=ogb.block_visual.fb] as @e[type=minecraft:falling_block,tag=ogb.block_visual] if score @s ogb.group_id = #GID_temp off_grid_blocks run data modify storage ogb:selected_block BlockState set from entity @s inBlockState

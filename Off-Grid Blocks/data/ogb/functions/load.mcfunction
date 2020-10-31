@@ -11,6 +11,9 @@ scoreboard objectives add ogb.posX dummy
 scoreboard objectives add ogb.posY dummy
 scoreboard objectives add ogb.posZ dummy
 
+team add ogb.no_collision
+team modify ogb.no_collision collisionRule never
+
 scoreboard players set #2 off_grid_blocks 2
 execute unless score #current_select_id off_grid_blocks matches 0.. run scoreboard players set #current_select_id off_grid_blocks 0
 execute unless score #block_group_id off_grid_blocks matches 0.. run scoreboard players set #block_group_id off_grid_blocks 0

@@ -1,6 +1,6 @@
-execute at @a if score @p ogb.select_id = @s ogb.select_id run tellraw @p [{"text": "Selected block: "},{"nbt": "BlockState.Name","storage": "ogb:selected_block"}]
-scoreboard players operation #GID_temp off_grid_blocks = @s ogb.group_id
-execute as @e[type=minecraft:falling_block,tag=ogb.block_visual,tag=off_grid_blocks,distance=..1] if score @s ogb.group_id = #GID_temp off_grid_blocks run data modify entity @s BlockState set from storage ogb:selected_block BlockState
-tp @e[type=minecraft:area_effect_cloud,tag=ogb.block_placement_marker,limit=1]
-kill @e[type=minecraft:area_effect_cloud,tag=ogb.block_placement_marker,limit=1]
+execute if entity @s[tag=!ogb.get_from_closest] at @a if score @p ogb.select_id = @s ogb.select_id run tellraw @p [{"text": "Selected block: "},{"nbt": "BlockState.Name","storage": "ogb:selected_block"}]
+execute if entity @s[tag=!ogb.get_from_closest] as @e[type=minecraft:falling_block,tag=ogb.block_visual,tag=off_grid_blocks,distance=..1] if score @s ogb.group_id = @e[type=#ogb:blocks,tag=ogb.block,tag=off_grid_blocks,sort=nearest,limit=1] ogb.group_id run data modify entity @s BlockState set from storage ogb:selected_block BlockState
+execute if entity @s[tag=ogb.get_from_closest] as @e[type=minecraft:falling_block,tag=ogb.block_visual,tag=off_grid_blocks,distance=..1] if score @s ogb.group_id = @e[type=#ogb:blocks,tag=ogb.block,tag=off_grid_blocks,sort=nearest,limit=1] ogb.group_id positioned ~-150 ~ ~ run data modify entity @s BlockState set from entity @e[type=minecraft:falling_block,tag=ogb.block_visual,tag=off_grid_blocks,sort=nearest,limit=1] BlockState
+execute at @e[type=minecraft:area_effect_cloud,tag=ogb.block_placement_marker] if score @e[type=minecraft:area_effect_cloud,tag=ogb.block_placement_marker,sort=nearest,limit=1] ogb.group_id = @s ogb.group_id run tp ~ ~ ~
+execute at @e[type=minecraft:area_effect_cloud,tag=ogb.block_placement_marker] if score @e[type=minecraft:area_effect_cloud,tag=ogb.block_placement_marker,sort=nearest,limit=1] ogb.group_id = @s ogb.group_id run kill @e[type=minecraft:area_effect_cloud,tag=ogb.block_placement_marker,sort=nearest,limit=1]
 forceload remove ~ ~

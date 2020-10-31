@@ -1,1 +1,1 @@
-execute unless entity @e[type=minecraft:arrow,tag=ogb.block_detector,tag=off_grid_blocks] run function ogb:create_block/summon
+execute unless entity @e[type=minecraft:arrow,tag=ogb.block_detector,tag=off_grid_blocks] run function ogb:create_block/create
