@@ -9,4 +9,6 @@ To give yourself the off-grid blocks wand, type `/loot give @s loot ogb:tool`
 To make a block into an off-grid block, right-click it with the wand.
 To select or deselect a block, hit the block with the wand.
 
+For blocks to be spawned properly, you need to have a render distance of 12 or higher.
+
 If you have any questions, feel free to ask in my discord: https://discord.gg/jn8d4zb
